@@ -1,0 +1,61 @@
+================================================================================
+      LAB 7: BENCHMARK RETRIEVAL TRÊN TẬP DỮ LIỆU CHÍNH SÁCH SHOPEE
+================================================================================
+Số lượng tài liệu nạp vào: 5
+  - buyer-warranty-policy.md
+  - return-refund-policy.md
+  - seller-fraud-penalty-policy.md
+  - seller-listing-regulations.md
+  - shipping-policy.md
+
+Embedding Backend sử dụng: mock embeddings fallback
+Tổng số chunk được tạo và lưu trữ: 132
+  * buyer-warranty-policy: 8 chunks
+  * return-refund-policy: 36 chunks
+  * seller-fraud-penalty-policy: 12 chunks
+  * seller-listing-regulations: 34 chunks
+  * shipping-policy: 42 chunks
+
+================================================================================
+                 CHẠY 5 CÂU HỎI BENCHMARK CỦA NHÓM
+================================================================================
+
+--- Câu hỏi 1: Người Mua có bao nhiêu ngày gửi yêu cầu Trả hàng/Hoàn tiền sau khi giao thành công? Thực phẩm tươi sống/đông lạnh khác không? ---
+Gold Answer: 15 ngày; riêng thực phẩm tươi sống/đông lạnh là 24 giờ (Nguồn: return-refund-policy mục 3.2)
+Top-1 Chunk ID: seller-listing-regulations#13 (File: seller-listing-regulations) | Score: 0.2781
+Nội dung Top-1: iii. Đối với các sản phẩm trưng bày, giới thiệu trên Shopee là các sản phẩm trên 15 độ cồn cần đáp ứng các quy định dưới đây:  + Về nhãn hàn...
+Đánh giá độ liên quan: Top-1 khớp? KHÔNG | Có trong Top-3? CÓ
+Agent Trả Lời: [RAG Agent Trả Lời]: Dựa theo quy định tại ngữ cảnh [1], nội dung chính xác là: iii. Đối với các sản phẩm trưng bày, giới thiệu trên Shopee là các sản phẩm trên 15 độ cồn cần đáp ứng các quy định dưới đây: + Về nhãn hàng hóa theo quy định của Nghị định 43/2017/NĐ-CP về nhãn hàng ...
+
+--- Câu hỏi 2: Sản phẩm mua tại Shopee được bảo hành miễn phí khi hội đủ điều kiện nào? ---
+Gold Answer: Lỗi kỹ thuật do NSX; còn hạn bảo hành; có hóa đơn điện tử hoặc mã đơn hàng; phiếu/tem bảo hành (điện gia dụng) còn nguyên vẹn (Nguồn: buyer-warranty-policy mục 1)
+Top-1 Chunk ID: buyer-warranty-policy#7 (File: buyer-warranty-policy) | Score: 0.3313
+Nội dung Top-1: 3. TRUNG TÂM BẢO HÀNH:   Thông tin của trung tâm bảo hành sẽ được ghi trong phiếu bảo hành kèm theo sản phẩm hoặc trên phần mô tả thông tin ...
+Đánh giá độ liên quan: Top-1 khớp? CÓ | Có trong Top-3? CÓ
+Agent Trả Lời: [RAG Agent Trả Lời]: Dựa theo quy định tại ngữ cảnh [1], nội dung chính xác là: 3. TRUNG TÂM BẢO HÀNH: Thông tin của trung tâm bảo hành sẽ được ghi trong phiếu bảo hành kèm theo sản phẩm hoặc trên phần mô tả thông tin chi tiết của sản phẩm. Quý khách vui lòng liên hệ trực tiếp vớ...
+
+--- Câu hỏi 3: Người Bán phải đảm bảo hàng còn tối thiểu bao nhiêu hạn sử dụng khi giao? Thực phẩm dưới 30 ngày thì sao? ---
+Gold Answer: Ít nhất 30% hạn sử dụng và còn ít nhất 30 ngày; thực phẩm dưới 30 ngày phải ghi rõ hạn sử dụng và tự sắp xếp vận chuyển (Nguồn: seller-listing-regulations mục D.2.a–b)
+Top-1 Chunk ID: return-refund-policy#26 (File: return-refund-policy) | Score: 0.2897
+Nội dung Top-1: 9.2.  Trong trường hợp Người Mua không có lịch sử vi phạm các chính sách, tiêu chuẩn cộng đồng của Shopee thì Shopee, trong một số trường hợ...
+Đánh giá độ liên quan: Top-1 khớp? KHÔNG | Có trong Top-3? CÓ
+Agent Trả Lời: [RAG Agent Trả Lời]: Dựa theo quy định tại ngữ cảnh [1], nội dung chính xác là: 9.2.  Trong trường hợp Người Mua không có lịch sử vi phạm các chính sách, tiêu chuẩn cộng đồng của Shopee thì Shopee, trong một số trường hợp, sẽ quyết định việc hoàn tiền ngay cho Người Mua mà không ...
+
+--- Câu hỏi 4: Thời hạn khiếu nại vận chuyển với đơn giao không thành công (hàng thất lạc / hư hại khi hoàn trả)? ---
+Gold Answer: Thất lạc: 07 ngày; hư hại/không nguyên vẹn: 03 ngày sau khi chuyển hoàn thành công (Nguồn: shipping-policy mục D.1.b.i)
+Top-1 Chunk ID: seller-listing-regulations#30 (File: seller-listing-regulations) | Score: 0.3112
+Nội dung Top-1: 3. Quy định về hạn sử dụng của quà tặng kèm  a. Khi quà tặng kèm được đăng công khai trên thông tin sản phẩm chính, quy định về hạn sử dụng ...
+Đánh giá độ liên quan: Top-1 khớp? KHÔNG | Có trong Top-3? KHÔNG
+Agent Trả Lời: [RAG Agent Trả Lời]: Dựa theo quy định tại ngữ cảnh [1], nội dung chính xác là: 3. Quy định về hạn sử dụng của quà tặng kèm a. Khi quà tặng kèm được đăng công khai trên thông tin sản phẩm chính, quy định về hạn sử dụng sẽ được áp dụng tương tự sản phẩm chính. b. Khi quà tặng kèm ...
+
+--- Câu hỏi 5: Mức bồi thường gian lận tối đa/đơn và ngày áp dụng? ---
+Gold Answer: Lên đến 10.000.000 VND mỗi đơn vi phạm, cộng dồn, cấn trừ Số dư; áp dụng từ 28/12/2023 (Nguồn: seller-fraud-penalty-policy mục 3.b)
+Metadata filter áp dụng: {'audience': 'seller'}
+Top-1 Chunk ID: seller-listing-regulations#16 (File: seller-listing-regulations) | Score: 0.3207
+Nội dung Top-1: Các mặt hàng là băng đĩa phim, ca múa nhạc/sân khấu khi đăng bán cần có: giấy phép phê duyệt nội dung + dán nhãn kiểm soát + giấy tờ về nguồ...
+Đánh giá độ liên quan: Top-1 khớp? KHÔNG | Có trong Top-3? KHÔNG
+Agent Trả Lời: [RAG Agent Trả Lời]: Dựa theo quy định tại ngữ cảnh [1], nội dung chính xác là: Các mặt hàng là băng đĩa phim, ca múa nhạc/sân khấu khi đăng bán cần có: giấy phép phê duyệt nội dung + dán nhãn kiểm soát + giấy tờ về nguồn gốc sản phẩm (chứng từ nhập khẩu/hóa đơn thuế). 3.13. Sản ...
+
+================================================================================
+TỔNG KẾT BENCHMARK: 3/5 câu hỏi có chunk liên quan trong Top-3
+================================================================================
