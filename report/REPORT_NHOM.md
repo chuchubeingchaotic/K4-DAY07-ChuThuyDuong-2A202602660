@@ -66,7 +66,7 @@ Chạy `ChunkingStrategyComparator().compare()` trên tài liệu mẫu `return-
 
 ### Chiến lược của từng thành viên
 
-#### Thành viên 1 — Chu Thuỳ Dương (Trưởng nhóm)
+#### Thành viên 1 — Chu Thuỳ Dương
 - **Loại chiến lược:** `SemanticChunker` (Semantic Chunking theo đề mục Markdown & Điều khoản)
 - **Cấu hình Backend:** `MockEmbedder` (chuẩn kiểm thử lab)
 - **Mô tả & lý do chọn:** Các văn bản chính sách pháp lý / TMĐT được phân cấp rất chặt chẽ theo các mục (`1. ĐỐI TƯỢNG`, `2. ĐIỀU KIỆN`, `3. THỜI HẠN`). `SemanticChunker` tự động bóc tách YAML frontmatter, nhận diện ranh giới tiêu đề `#`, `##` và các số thứ tự điều khoản, sau đó gom các đoạn văn liên quan trong cùng một mục thành chunk thống nhất ($\le 800$ ký tự). Điều này giúp mỗi chunk chứa trọn vẹn một quy định hoàn chỉnh, không bị cắt cụt mệnh đề.
